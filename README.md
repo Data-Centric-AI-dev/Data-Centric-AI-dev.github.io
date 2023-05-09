@@ -1,2 +1,1 @@
-# DataCentricAI-ICDM.github.io
-Data-Centric AI Workshop for ICDM
+Data-Centric AI 
