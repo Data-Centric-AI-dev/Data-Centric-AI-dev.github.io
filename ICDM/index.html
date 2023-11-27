@@ -261,11 +261,14 @@
             width: 300px;
         }  
       th:nth-child(3), td:nth-child(3) {
-            width: 150px;
+            width: 130px;
         }
-        th:nth-child(5), td:nth-child(5) {
+      th:nth-child(5), td:nth-child(5) {
             width: 300px;
-        }     
+        } 
+      th:nth-child(1), td:nth-child(1) {
+            width: 150px;
+        }    
   </style>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
@@ -331,7 +334,10 @@
     <table border="1">
       <tbody>
         <tr>
-          <td>Time (Beijing<br> Time, Dec. 1st)</td>
+          <td  colspan="5">Date: Dec. 1st, Location: Room 6, Zoom link: https://zoom.us/j/91649466943</td>
+      </tr>
+        <tr>
+          <td>Time (Beijing Time)</td>
           <td>Title</td>
           <td>Attendance</td>
           <td>Format</td>
