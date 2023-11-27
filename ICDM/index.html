@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="./assets/js/color-modes.js"></script>
+  <head><script src="./assets/js/color-modes.js">
+
+
+  </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -161,6 +164,9 @@
             <a class="nav-link" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#agenda">Agenda</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#topics">Topics</a>
           </li>
           <li class="nav-item">
@@ -183,9 +189,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#student_volunteer">Student Volunteers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#agenda">Agenda</a>
           </li>
         </ul>
       </div>
@@ -244,7 +247,170 @@
         <p class="lead" style="margin-top: -50px;">Machine learning focuses on developing models for datasets, but real-world data is often messy. Improving the dataset itself can be a better way to enhance performance instead of just improving the models. Data-Centric AI (DCAI) is an emerging field that systematically improves datasets, resulting in significant improvements in ML applications. DCAI treats data improvement as an engineering discipline, offering a shift in focus from modeling to the underlying data. This workshop aims to build an interdisciplinary DCAI community to tackle data problems such as collection, labeling, preprocessing, quality evaluation, debt, and governance. Interested parties can shape the future of AI and ML by submitting papers in response to the call for papers.
         </p>
       </div>
+
     </div>
+    <hr class="featurette-divider" >
+
+    <h1 id="agenda">Agenda</h1>
+
+    <hr class="featurette-divider" >
+    <style>
+      table,table tr th, table tr td { border:1px solid #000000; height: 50px;white-space: pre-line;}
+      table { width: 1100px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+      th:nth-child(2), td:nth-child(2) {
+            width: 300px;
+        }  
+      th:nth-child(3), td:nth-child(3) {
+            width: 150px;
+        }
+        th:nth-child(5), td:nth-child(5) {
+            width: 300px;
+        }     
+  </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+            // 获取北京时间
+            var beijingTime = getBeijingTime();
+            var beijingDate = getBeijingDate();
+
+            // 转换为用户本地时间
+            var userLocalTime = convertToUserTimeZone(beijingTime);
+            var userLocalDate = convertToUserTimeZone(beijingDate);
+
+            // 在表格中显示转换后的时间和日期
+            document.getElementById("dateTimeCell").textContent = beijingDate + " " + beijingTime + " /" + userLocalDate + " " + userLocalTime;
+        });
+
+        // 获取北京时间的函数
+        function getBeijingTime() {
+            var options = {
+                timeZone: 'Asia/Shanghai', // 北京时区
+                hour12: false,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+
+            // 使用Date对象和时区信息获取北京时间
+            return new Date().toLocaleTimeString('en-US', options);
+        }
+
+        // 获取北京日期的函数
+        function getBeijingDate() {
+            var options = {
+                timeZone: 'Asia/Shanghai', // 北京时区
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            };
+
+            // 使用Date对象和时区信息获取北京日期
+            return new Date().toLocaleDateString('en-US', options);
+        }
+
+        // 将时间和日期转换为用户本地时间的函数
+        function convertToUserTimeZone(dateTime) {
+            var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            var options = {
+                timeZone: userTimeZone,
+                hour12: false,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            };
+
+            // 使用Date对象和时区信息将北京时间和日期转换为用户本地时间
+            return new Date(dateTime).toLocaleString('en-US', options);
+        }
+  </script>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td><br>Time (Beijing<br> Time, Dec. 4th)</td>
+          <td><br>Title</td>
+          <td><br>Attendance</td>
+          <td><br>Format</td>
+          <td><br>Presenter/Author</td>
+        </tr>
+        <tr>
+          <td>8:00-8:05</td>
+          <td>Opening Remarks</td>
+          <td></td>
+          <td></td>
+          <td>Organizers</td>
+        </tr>
+        <tr>
+          <td>8:05-8:40</td>
+          <td>Keynote Presentation: Addressing Data Quality Issues with Data-Centric AI Approaches</td>
+          <td>Video</td>
+          <td>30 min + 5 min QA session</td>
+          <td>Jae-Gil Lee</td>
+        </tr>
+        <tr>
+          <td>8:40-9:15</td>
+          <td>Keynote Presentation</td>
+          <td>Video</td>
+          <td>30 min + 5 min QA session</td>
+          <td>Chao Zhang</td>
+        </tr>
+        <tr>
+          <td>9:15-9:30</td>
+          <td>Resolving the Imbalance Issue in Hierarchical Disciplinary Topic Inference via LLM-based Data Augmentation</td>
+          <td>In-person</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Xunxin Cai, Meng Xiao, Zhiyuan Ning, <br>and Yuanchun Zhou</td>
+        </tr>
+        <tr>
+          <td>9:30-9:45</td>
+          <td>Alternative Speech: Complementary<br>Method to Counter-Narrative<br>for Better Discourse</td>
+          <td>In-person</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Seungyoon Lee, Dahyun Jung, Chanjun <br>Park, Seolhwa Lee, and Heuiseok Lim</td>
+        </tr>
+        <tr>
+          <td>9:45-10:00</td>
+          <td>Deep Outdated Fact Detection<br>in Knowledge Graphs</td>
+          <td>In-person</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Huiling Tu, Shuo Yu, Vidya Saikrishna,<br>Feng Xia, and Karin Verspoor</td>
+        </tr>
+        <tr>
+          <td>10:00-10:15</td>
+          <td>Silence Speaks Volumes: Re-weighting<br>Techniques for Under-Represented<br>Users in Fake News Detection</td>
+          <td>Video</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Mansooreh Karami, David Mosallanezhad, Paras Sheth, and Huan Liu</td>
+        </tr>
+        <tr>
+          <td>10:15-10:30</td>
+          <td>Guided Nearest-Neighbor Contrastive<br>Learning with Prior Knowledge<br>For Hotel Recognition</td>
+          <td>Video</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Aarash Feizi, Randall Balestriero, Arantxa Casanova, Adriana Romero-Soriano, and Reihaneh Rabbany</td>
+        </tr>
+        <tr>
+          <td>10:30-10:35</td>
+          <td>Closing Remarks</td>
+          <td></td>
+          <td></td>
+          <td>Organizers</td>
+        </tr>
+      </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+    </table>
+
+
 
     <hr class="featurette-divider" >
 
@@ -542,16 +708,6 @@
         <li class="list-group-item">Ms. Qi Hao, University of Macau</li>
       </ul>
     
-    </div>
-   <hr class="featurette-divider">
-
-    <h1 id="agenda">Agenda</h1>
-    <hr class="featurette-divider">
-    <div class="col-md-12" style="margin-top: -50px;">
-      <b>
-        For the detailed agenda of DCAI workshop, please refer <a href="Detailed_Agenda.pdf">HERE</a>.
-
-      </b>
     </div>
 
 
