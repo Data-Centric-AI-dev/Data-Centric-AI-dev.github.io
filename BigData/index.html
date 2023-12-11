@@ -173,6 +173,9 @@
             <a class="nav-link" aria-current="page" href="#dates">Important Dates</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#agenda">Agenda</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#organizers">Organizing Committee</a>
           </li>
           <li class="nav-item">
@@ -391,6 +394,191 @@
         <li class="list-group-item">Workshop Day: <b>Dec. 15, 2023</b></li>
       </ul>
     </div>
+
+    <hr class="featurette-divider">
+
+    <h1 id="agenda">Agenda</h1>
+
+    <hr class="featurette-divider" >
+    <style>
+      table,table tr th, table tr td { border:1px solid #000000; height: 50px;white-space: pre-line;}
+      table { width: 1100px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+      th:nth-child(2), td:nth-child(2) {
+            width: 400px;
+        }  
+      th:nth-child(3), td:nth-child(3) {
+            width: 200px;
+        }
+      th:nth-child(4), td:nth-child(4) {
+            width: 300px;
+        }
+      th:nth-child(1), td:nth-child(1) {
+            width: 150px;
+        }    
+  </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+            // 获取北京时间
+            var beijingTime = getBeijingTime();
+            var beijingDate = getBeijingDate();
+
+            // 转换为用户本地时间
+            var userLocalTime = convertToUserTimeZone(beijingTime);
+            var userLocalDate = convertToUserTimeZone(beijingDate);
+
+            // 在表格中显示转换后的时间和日期
+            document.getElementById("dateTimeCell").textContent = beijingDate + " " + beijingTime + " /" + userLocalDate + " " + userLocalTime;
+        });
+
+        // 获取北京时间的函数
+        function getBeijingTime() {
+            var options = {
+                timeZone: 'Asia/Shanghai', // 北京时区
+                hour12: false,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+
+            // 使用Date对象和时区信息获取北京时间
+            return new Date().toLocaleTimeString('en-US', options);
+        }
+
+        // 获取北京日期的函数
+        function getBeijingDate() {
+            var options = {
+                timeZone: 'Asia/Shanghai', // 北京时区
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            };
+
+            // 使用Date对象和时区信息获取北京日期
+            return new Date().toLocaleDateString('en-US', options);
+        }
+
+        // 将时间和日期转换为用户本地时间的函数
+        function convertToUserTimeZone(dateTime) {
+            var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            var options = {
+                timeZone: userTimeZone,
+                hour12: false,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            };
+
+            // 使用Date对象和时区信息将北京时间和日期转换为用户本地时间
+            return new Date(dateTime).toLocaleString('en-US', options);
+        }
+  </script>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td  colspan="5">Date: Dec. 15th (Central European Standard)</td>
+      </tr>
+        <tr>
+          <td>Time</td>
+          <td>Title</td>
+          <td>Format</td>
+          <td>Presenter/Author</td>
+        </tr>
+        <tr>
+          <td>8:00-8:05</td>
+          <td colspan="3" >Opening Remarks</td>
+
+        </tr>
+        <tr>
+          <td>8:05-8:40</td>
+          <td>Keynote Presentation</td>
+          <td>30 min + 5 min QA session</td>
+          <td>Min Wu</td>
+        </tr>
+        <tr>
+          <td>8:40-9:15</td>
+          <td>Keynote Presentation</td>
+          <td>30 min + 5 min QA session</td>
+          <td>Chandan K. Reddy</td>
+        </tr>
+        <tr>
+          <td>9:15-9:50</td>
+          <td>Keynote Presentation: Addressing Data Quality Issues with Data-Centric AI Approaches</td>
+          <td>30 min + 5 min QA session</td>
+          <td>Jae-Gil Lee</td>
+        </tr>
+        <tr>
+          <td>9:50-10:05</td>
+          <td>Tensor Space Model-based Textual Data Augmentation for Text Classification</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Minsuk Chang and Han-joon Kim</td>
+        </tr>
+        <tr>
+          <td>10:05-10:35</td>
+          <td colspan="3" >Coffee Break</td>
+        </tr>
+        <tr>
+          <td>10:35-10:50</td>
+          <td>MIAE:A Mobile Application Recommendation Method Based on a NTK Model</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Jiahui Han, Qufei Zhang, Xiaoying Yang, and Jinyi Wang</td>
+        </tr>
+        <tr>
+          <td>10:50-11:05</td>
+          <td>Combining Block Bootstrap with Exponential Smoothing for Reinforcing Non-Emergency Urban Services Prediction</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Kshira Sagar Sahoo, Shivam Krishana, and Monowar Bhuyan</td>
+        </tr>
+        <tr>
+          <td>11:05-11:20</td>
+          <td>Enabling Cross-Language Data Integration and Scalable Analytics in Decentralized Finance</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Conor Flynn, Kristin Bennett, John Erickson, Aaron Green, and Oshani Seneviratne</td>
+        </tr>
+        <tr>
+          <td>11:20-11:35</td>
+          <td>FedSym: Unleashing the Power of Entropy for Benchmarking the Algorithms for Federated Learning</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Ensiye Kiyamousavi, Boris Kraychev, and Ivan Koychev</td>
+        </tr>
+        <tr>
+          <td>11:35-11:50</td>
+          <td>Novel NBA Fantasy League driven by Engineered Team Chemistry and Scaled Position Statistics</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Ganesh Arkanath, Nishad Gupta, Hasan Kurban, Parichit Sharma, Madhavan K R, Elham Khorasani Buxton, and Mehmet M Dalkilic</td>
+        </tr>
+        <tr>
+          <td>11:50-12:05</td>
+          <td>Effect of Varied Datasets on Training of a Segmentation Model Used in Visual Navigation</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Marin Wada, Miho Adachi, and Ryusuke Miyamoto</td>
+        </tr>
+        <tr>
+          <td>12:05-12:20</td>
+          <td>Does a Dense Point Cloud for Training Data Generation Improve Segmentation Accuracy?</td>
+          <td>12 min + 3 min QA session</td>
+          <td>Marin Wada, Hiroaki Sudo, Miho Adachi, and Ryusuke Miyamoto</td>
+        </tr>
+        <tr>
+          <td>12:20-12:30</td>
+          <td colspan="3" >Closing Remarks</td>
+        </tr>
+
+
+
+      </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+    </table>
 
 
 
