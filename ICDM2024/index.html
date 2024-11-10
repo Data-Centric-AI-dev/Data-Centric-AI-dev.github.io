@@ -163,9 +163,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#home">Home</a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#agenda">Agenda</a>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#topics">Topics</a>
           </li>
@@ -253,103 +253,7 @@
       </div>
 
     </div>
-    <!-- <hr class="featurette-divider" > -->
-
-    <!-- <h1 id="agenda">Agenda</h1> -->
-
-    <!-- <hr class="featurette-divider" >
-    <style>
-      table,table tr th, table tr td { border:1px solid #000000; height: 50px;white-space: pre-line;}
-      table { width: 1100px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
-      th:nth-child(2), td:nth-child(2) {
-            width: 300px;
-        }  
-      th:nth-child(3), td:nth-child(3) {
-            width: 130px;
-        }
-      th:nth-child(5), td:nth-child(5) {
-            width: 300px;
-        } 
-      th:nth-child(1), td:nth-child(1) {
-            width: 150px;
-        }    
-  </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-            // 获取北京时间
-            var beijingTime = getBeijingTime();
-            var beijingDate = getBeijingDate();
-
-            // 转换为用户本地时间
-            var userLocalTime = convertToUserTimeZone(beijingTime);
-            var userLocalDate = convertToUserTimeZone(beijingDate);
-
-            // 在表格中显示转换后的时间和日期
-            document.getElementById("dateTimeCell").textContent = beijingDate + " " + beijingTime + " /" + userLocalDate + " " + userLocalTime;
-        });
-
-        // 获取北京时间的函数
-        function getBeijingTime() {
-            var options = {
-                timeZone: 'Asia/Shanghai', // 北京时区
-                hour12: false,
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            };
-
-            // 使用Date对象和时区信息获取北京时间
-            return new Date().toLocaleTimeString('en-US', options);
-        }
-
-        // 获取北京日期的函数
-        function getBeijingDate() {
-            var options = {
-                timeZone: 'Asia/Shanghai', // 北京时区
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric'
-            };
-
-            // 使用Date对象和时区信息获取北京日期
-            return new Date().toLocaleDateString('en-US', options);
-        }
-
-        // 将时间和日期转换为用户本地时间的函数
-        function convertToUserTimeZone(dateTime) {
-            var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-            var options = {
-                timeZone: userTimeZone,
-                hour12: false,
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric',
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric'
-            };
-
-            // 使用Date对象和时区信息将北京时间和日期转换为用户本地时间
-            return new Date(dateTime).toLocaleString('en-US', options);
-        }
-  </script>
-
-    <table border="1">
-      <tbody>
-        <tr>
-          <td  colspan="5">Date: Dec. 1st, Location: Room 6, Zoom link: https://zoom.us/j/91649466943, Password: 202312</td>
-      </tr>
-        <tr>
-          <td>Time (Beijing Time)</td>
-          <td>Title</td>
-          <td>Attendance</td>
-          <td>Format</td>
-          <td>Presenter/Author</td>
-        </tr>
-        <tr>
-          <td>8:00-8:05</td>
-          <td>Opening Remarks</td>
+    marks</td>
           <td></td>
           <td></td>
           <td>Organizers</td>
@@ -360,67 +264,196 @@
           <td>Video</td>
           <td>30 min + 5 min QA session</td>
           <td>Jae-Gil Lee</td>
-        </tr>
-        <tr>
-          <td>8:40-9:15</td>
-          <td>Keynote Presentation: Data-Efficient Fine-Tuning and Adaptation of Language Models</td>
-          <td>Video</td>
-          <td>30 min + 5 min QA session</td>
-          <td>Chao Zhang</td>
-        </tr>
-        <tr>
-          <td>9:15-9:30</td>
-          <td>Resolving the Imbalance Issue in Hierarchical Disciplinary Topic Inference via LLM-based Data Augmentation</td>
-          <td>In-person</td>
-          <td>12 min + 3 min QA session</td>
-          <td>Xunxin Cai, Meng Xiao, Zhiyuan Ning, <br>and Yuanchun Zhou</td>
-        </tr>
-        <tr>
-          <td>9:30-9:45</td>
-          <td>Alternative Speech: Complementary<br>Method to Counter-Narrative<br>for Better Discourse</td>
-          <td>In-person</td>
-          <td>12 min + 3 min QA session</td>
-          <td>Seungyoon Lee, Dahyun Jung, Chanjun <br>Park, Seolhwa Lee, and Heuiseok Lim</td>
-        </tr>
-        <tr>
-          <td>9:45-10:00</td>
-          <td>Deep Outdated Fact Detection<br>in Knowledge Graphs</td>
-          <td>In-person</td>
-          <td>12 min + 3 min QA session</td>
-          <td>Huiling Tu, Shuo Yu, Vidya Saikrishna,<br>Feng Xia, and Karin Verspoor</td>
-        </tr>
-        <tr>
-          <td>10:00-10:15</td>
-          <td>Silence Speaks Volumes: Re-weighting<br>Techniques for Under-Represented<br>Users in Fake News Detection</td>
-          <td>Video</td>
-          <td>12 min + 3 min QA session</td>
-          <td>Mansooreh Karami, David Mosallanezhad, Paras Sheth, and Huan Liu</td>
-        </tr>
-        <tr>
-          <td>10:15-10:30</td>
-          <td>Guided Nearest-Neighbor Contrastive<br>Learning with Prior Knowledge<br>For Hotel Recognition</td>
-          <td>Video</td>
-          <td>12 min + 3 min QA session</td>
-          <td>Aarash Feizi, Randall Balestriero, Arantxa Casanova, Adriana Romero-Soriano, and Reihaneh Rabbany</td>
-        </tr>
-        <tr>
-          <td>10:30-10:35</td>
-          <td>Closing Remarks</td>
-          <td></td>
-          <td></td>
-          <td>Organizers</td>
-        </tr>
-      </tbody>
-      <colgroup>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-      </colgroup>
-    </table> --> 
+        </tr><!-- <hr class="featurette-divider" > -->
 
 
+        <hr class="featurette-divider" >
+
+        <h1 id="agenda">Agenda</h1>
+    
+         <hr class="featurette-divider" >
+        <style>
+          table,table tr th, table tr td { border:1px solid #000000; height: 50px;white-space: pre-line;}
+          table { width: 1100px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+          th:nth-child(2), td:nth-child(2) {
+                width: 450px;
+            }  
+          th:nth-child(3), td:nth-child(3) {
+                width: 220px;
+            }
+          th:nth-child(5), td:nth-child(5) {
+                width: 270px;
+            } 
+          th:nth-child(1), td:nth-child(1) {
+                width: 150px;
+            }    
+      </style>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+                // 获取北京时间
+                var beijingTime = getBeijingTime();
+                var beijingDate = getBeijingDate();
+    
+                // 转换为用户本地时间
+                var userLocalTime = convertToUserTimeZone(beijingTime);
+                var userLocalDate = convertToUserTimeZone(beijingDate);
+    
+                // 在表格中显示转换后的时间和日期
+                document.getElementById("dateTimeCell").textContent = beijingDate + " " + beijingTime + " /" + userLocalDate + " " + userLocalTime;
+            });
+    
+            // 获取北京时间的函数
+            function getBeijingTime() {
+                var options = {
+                    timeZone: 'Asia/Shanghai', // 北京时区
+                    hour12: false,
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric'
+                };
+    
+                // 使用Date对象和时区信息获取北京时间
+                return new Date().toLocaleTimeString('en-US', options);
+            }
+    
+            // 获取北京日期的函数
+            function getBeijingDate() {
+                var options = {
+                    timeZone: 'Asia/Shanghai', // 北京时区
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric'
+                };
+    
+                // 使用Date对象和时区信息获取北京日期
+                return new Date().toLocaleDateString('en-US', options);
+            }
+    
+            // 将时间和日期转换为用户本地时间的函数
+            function convertToUserTimeZone(dateTime) {
+                var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    
+                var options = {
+                    timeZone: userTimeZone,
+                    hour12: false,
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric',
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric'
+                };
+    
+                // 使用Date对象和时区信息将北京时间和日期转换为用户本地时间
+                return new Date(dateTime).toLocaleString('en-US', options);
+            }
+      </script>
+    
+        <table border="1">
+          <tbody>
+            <tr>
+              <td  colspan="5">Date: December 9th (GMT+4)</td>
+          </tr>
+            <tr>
+              <td>Time</td>
+              <td>Title</td>
+              <!-- <td>Attendance</td> -->
+              <td>Format</td>
+              <td>Presenter/Author</td>
+            </tr>
+            <tr>
+              <td>15:30-15:35</td>
+              <td>Opening Remarks</td>
+              <!-- <td></td> -->
+              <td>5 min</td>
+              <td>Organizers</td>
+            </tr>
+            <tr>
+              <td>15:35-16:10</td>
+              <td>Keynote Presentation</td>
+              <!-- <td>Video</td> -->
+              <td>25 min + 10 min QA session</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>16:10-16:45</td>
+              <td>Keynote Presentation</td>
+              <!-- <td>Video</td> -->
+              <td>25 min + 10 min QA session</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>16:45-17:10</td>
+              <td>Coffee Break</td>
+              <!-- <td>In-person</td> -->
+              <td>25 min</td>
+              <td>Organizers</td>
+            </tr>
+            <tr>
+              <td>17:10-17:18</td>
+              <td>Paper Presentation: Formal Classifier of a Rhythmic Structure Model for Inference about Linguistic Text Properties</td>
+              <!-- <td>In-person</td> -->
+              <td>30 min + 10 min QA session</td>
+              <td>Jolanta Mizera-Pietraszko and Jolanta Tancula</td>
+            </tr>
+            <tr>
+              <td>17:18-17:26</td>
+              <td>Paper Presentation: Heisenberg Algebra Implementation to AAG Algorithm for Secure Data Transfer in IoT Networks</td>
+              <!-- <td>In-person</td> -->
+              <td>6 min + 2 min QA session</td>
+              <td>Jolanta Mizera-Pietraszko and Jolanta Tancula</td>
+            </tr>
+            <tr>
+              <td>17:26-17:34</td>
+              <td>Paper Presentation: Anomaly Detection and Interpretation from Tabular Data Using Transformer Architecture</td>
+              <!-- <td>In-person</td> -->
+              <td>6 min + 2 min QA session</td>
+              <td>Hajar Homayouni, Hamed Aghayarzadeh, Indrakshi Ray, and Hossein Shirazi</td>
+            </tr>
+            <tr>
+              <td>17:34-17:42</td>
+              <td>Paper Presentation: scReader: Prompting Large Language Models to Interpret scRNA-seq Data</td>
+              <!-- <td>In-person</td> -->
+              <td>6 min + 2 min QA session</td>
+              <td>Cong Li, Qingqing Long, Yuanchun Zhou, and Meng Xiao</td>
+            </tr>
+            <tr>
+              <td>17:42-17:50</td>
+              <td>Paper Presentation: MRDiff: Time Series Anomaly Detection Using Multi-level Reconstruction Diffusion</td>
+              <!-- <td>In-person</td> -->
+              <td>6 min + 2 min QA session</td>
+              <td>Daygeong Na and Junseok Kwon</td>
+            </tr>
+            <tr>
+              <td>17:50-17:58</td>
+              <td>Paper Presentation: On the classification of weather based on the production of photovoltaic installations</td>
+              <!-- <td>In-person</td> -->
+              <td>6 min + 2 min QA session</td>
+              <td>Paweł Parczyk, Tobiasz Puślecki, and Robert Burduk</td>
+            </tr>
+            <!-- <tr>
+              <td>17:20-17:28</td>
+              <td>Paper Presentation: Assessing Data Copyright in Large Language Model via Partial Information Probing</td>
+              <td>In-person</td> -->
+              <!-- <td>6 min + 2 min QA session</td>
+              <td>Weijie Zhao, Huajie Shao, Zhaozhuo Xu, Suzhen Duan, and Denghui Zhang</td>
+            </tr> --> 
+            <tr>
+              <td>17:58-18:00</td>
+              <td>Closing Remarks</td>
+              <!-- <td>In-person</td> -->
+              <td>2 min</td>
+              <td>Organizers</td>
+            </tr>
+          </tbody>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+        </table>  
 
     <hr class="featurette-divider" >
 
