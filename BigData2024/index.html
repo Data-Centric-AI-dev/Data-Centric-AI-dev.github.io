@@ -160,6 +160,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#home">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#agenda">Agenda</a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Scope</a>
           </li> -->
@@ -175,9 +178,7 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#organizers">Keynote Presentations</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#agenda">Agenda</a>
-          </li> -->
+          
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#speakers">Speakers</a> 
           </li>
@@ -304,6 +305,175 @@
         </p>
       </div>
     </div>
+
+    <hr class="featurette-divider">
+    <h1 id="agenda">Agenda</h1>
+    
+    <hr class="featurette-divider" >
+   <style>
+     table,table tr th, table tr td { border:1px solid #000000; height: 50px;white-space: pre-line;}
+     table { width: 1100px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+     th:nth-child(2), td:nth-child(2) {
+           width: 450px;
+       }  
+     th:nth-child(3), td:nth-child(3) {
+           width: 220px;
+       }
+     th:nth-child(5), td:nth-child(5) {
+           width: 270px;
+       } 
+     th:nth-child(1), td:nth-child(1) {
+           width: 150px;
+       }    
+ </style>
+   <script>
+     document.addEventListener("DOMContentLoaded", function() {
+           // 获取北京时间
+           var beijingTime = getBeijingTime();
+           var beijingDate = getBeijingDate();
+
+           // 转换为用户本地时间
+           var userLocalTime = convertToUserTimeZone(beijingTime);
+           var userLocalDate = convertToUserTimeZone(beijingDate);
+
+           // 在表格中显示转换后的时间和日期
+           document.getElementById("dateTimeCell").textContent = beijingDate + " " + beijingTime + " /" + userLocalDate + " " + userLocalTime;
+       });
+
+       // 获取北京时间的函数
+       function getBeijingTime() {
+           var options = {
+               timeZone: 'Asia/Shanghai', // 北京时区
+               hour12: false,
+               hour: 'numeric',
+               minute: 'numeric',
+               second: 'numeric'
+           };
+
+           // 使用Date对象和时区信息获取北京时间
+           return new Date().toLocaleTimeString('en-US', options);
+       }
+
+       // 获取北京日期的函数
+       function getBeijingDate() {
+           var options = {
+               timeZone: 'Asia/Shanghai', // 北京时区
+               year: 'numeric',
+               month: 'numeric',
+               day: 'numeric'
+           };
+
+           // 使用Date对象和时区信息获取北京日期
+           return new Date().toLocaleDateString('en-US', options);
+       }
+
+       // 将时间和日期转换为用户本地时间的函数
+       function convertToUserTimeZone(dateTime) {
+           var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+           var options = {
+               timeZone: userTimeZone,
+               hour12: false,
+               hour: 'numeric',
+               minute: 'numeric',
+               second: 'numeric',
+               year: 'numeric',
+               month: 'numeric',
+               day: 'numeric'
+           };
+
+           // 使用Date对象和时区信息将北京时间和日期转换为用户本地时间
+           return new Date(dateTime).toLocaleString('en-US', options);
+       }
+ </script>
+
+   <table border="1">
+     <tbody>
+       <tr>
+         <td  colspan="5">Date: December 15th 14:00-18:00</td>
+     </tr>
+       <tr>
+         <td>Time</td>
+         <td>Title</td>
+         <!-- <td>Attendance</td> -->
+         <td>Format</td>
+         <td>Presenter/Author</td>
+       </tr>
+       <tr>
+        <td>14:00-14:05</td>
+        <td>Opening Remarks</td>
+        <td>5 min</td>
+        <td>Organizers</td>
+      </tr>
+      <tr>
+        <td>14:05-14:45</td>
+        <td>Keynote Presentation</td>
+        <td>30 min + 10 min QA session</td>
+        <td>Chandan Reddy</td>
+      </tr>
+      <tr>
+        <td>14:45-15:25</td>
+        <td>Keynote Presentation</td>
+        <td>30 min + 10 min QA session</td>
+        <td>Dawei Zhou</td>
+      </tr>
+      <tr>
+        <td>15:25-16:00</td>
+        <td>Coffee Break</td>
+        <td>35 min</td>
+        <td>Organizers</td>
+      </tr>
+      <tr>
+        <td>16:00-16:40</td>
+        <td>Keynote Presentation</td>
+        <td>30 min + 10 min QA session</td>
+        <td>Dongjin Song</td>
+      </tr>
+      <tr>
+        <td>16:40-16:55</td>
+        <td>Paper Presentation: Can Causal DAGs Generate Data-based Explanations of Black-box Models?</td>
+        <td>10 min + 5 min QA session</td>
+        <td>Arman Ashkari and El Kindi Rezig</td>
+      </tr>
+      <tr>
+        <td>16:55-17:10</td>
+        <td>Paper Presentation: Leveraging Structured and Unstructured Data for Tabular Data Cleaning</td>
+        <td>10 min + 5 min QA session</td>
+        <td>Pavitra Mehra and El Kindi Rezig</td>
+      </tr>
+      <tr>
+        <td>17:10-17:25</td>
+        <td>Paper Presentation: From Words to Actions: A Comprehensive Approach to Identifying Incel Behavior on Reddit</td>
+        <td>10 min + 5 min QA session</td>
+        <td>Ahmet Y. Demirbas, Jakir Hossain, and Ahmet Erdem Sariyuce</td>
+      </tr>
+      <tr>
+        <td>17:25-17:40</td>
+        <td>Paper Presentation: Active Learning with Alternating Acquisition Functions: Balancing the Exploration-Exploitation Dilemma</td>
+        <td>10 min + 5 min QA session</td>
+        <td>Cédric Jung, Shirin Salehi, and Anke Schmeink</td>
+      </tr>
+      <tr>
+        <td>17:40-17:55</td>
+        <td>Paper Presentation: Integrating Flow and Structure in Diagrams for Data Science</td>
+        <td>10 min + 5 min QA session</td>
+        <td>Enea Vincenzo Napolitano, Elio Masciari, and Carlos Ordonez</td>
+      </tr>
+      <tr>
+        <td>17:55-18:00</td>
+        <td>Closing Remarks</td>
+        <td>5 min</td>
+        <td>Organizers</td>
+      </tr>      
+     </tbody>
+     <colgroup>
+       <col>
+       <col>
+       <col>
+       <col>
+       <col>
+     </colgroup>
+   </table>  
 
     <hr class="featurette-divider" >
 
@@ -657,6 +827,7 @@
       <ul class="list-group">
          <li class="list-group-item">Dr. Dawei Zhou, Virginia Tech</li>
         <li class="list-group-item">Dr. Dongjin Song, University of Connecticut</li>
+        <li class="list-group-item">Dr. Chandan Reddy, Virginia Tech</li>
         <!-- <li class="list-group-item">Dr. Chandan K. Reddy, Virginia Polytechnic Institute and State University</li>  -->
      </ul>
 
